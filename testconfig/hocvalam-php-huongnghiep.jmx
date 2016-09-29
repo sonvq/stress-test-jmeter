@@ -82,7 +82,7 @@
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Icon Upload - media/images" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Icon HN Upload - media/images" enabled="true">
           <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
             <collectionProp name="HTTPFileArgs.files">
               <elementProp name="C:\Users\Administrator\Desktop\icon\icon1.png" elementType="HTTPFileArg">
@@ -131,13 +131,13 @@
             <stringProp name="parameters"></stringProp>
             <stringProp name="script">var data = prev.getResponseDataAsString();
 var object = JSON.parse(data);
-vars.put(&quot;iconMediaId&quot;, object.result.id);
+vars.put(&quot;iconMediaHNId&quot;, object.result.id);
 </stringProp>
             <stringProp name="scriptLanguage">javascript</stringProp>
           </BSFPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Background Upload - media/images" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Background HN Upload - media/images" enabled="true">
           <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
             <collectionProp name="HTTPFileArgs.files">
               <elementProp name="C:\Users\Administrator\Desktop\background\background1.png" elementType="HTTPFileArg">
@@ -186,14 +186,14 @@ vars.put(&quot;iconMediaId&quot;, object.result.id);
             <stringProp name="parameters"></stringProp>
             <stringProp name="script">var data = prev.getResponseDataAsString();
 var object = JSON.parse(data);
-vars.put(&quot;backgroundMediaId&quot;, object.result.background.id);
-vars.put(&quot;thumbnailMediaId&quot;, object.result.thumbnail.id);
+vars.put(&quot;backgroundMediaHNId&quot;, object.result.background.id);
+vars.put(&quot;thumbnailMediaHNId&quot;, object.result.thumbnail.id);
 </stringProp>
             <stringProp name="scriptLanguage">javascript</stringProp>
           </BSFPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="App Create - apps - POST" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="App HN Create - apps - POST" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="app_type_id" elementType="HTTPArgument">
@@ -240,21 +240,21 @@ vars.put(&quot;thumbnailMediaId&quot;, object.result.thumbnail.id);
               </elementProp>
               <elementProp name="icon" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${iconMediaId}</stringProp>
+                <stringProp name="Argument.value">${iconMediaHNId}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">icon</stringProp>
               </elementProp>
               <elementProp name="background" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${backgroundMediaId}</stringProp>
+                <stringProp name="Argument.value">${backgroundMediaHNId}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">background</stringProp>
               </elementProp>
               <elementProp name="thumbnail" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${thumbnailMediaId}</stringProp>
+                <stringProp name="Argument.value">${thumbnailMediaHNId}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">thumbnail</stringProp>
